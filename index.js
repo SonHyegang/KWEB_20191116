@@ -26,7 +26,7 @@ app.get('/diaries', (req, res) => {
     } 
 });
 app.get('/diary/:id', (req, res) => {
-    if(!myDiary[req.params.id]){
+    if(myDiary[req.params.id] == null){
         res.status(404).send(`Diary #${req.params.id} does not exist!`);
     }
     else{
